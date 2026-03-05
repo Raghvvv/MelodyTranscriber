@@ -6,14 +6,18 @@ from basic_pitch.inference import predict_and_save
 
 # print(note_events)
 
+def predictMidi(wavfile):
+    predict_and_save(
+        [wavfile],
+        "outputs/MIDI",
+        True,
+        True,
+        False,
+        False,
+        ICASSP_2022_MODEL_PATH
 
-predict_and_save(
-    ["/home/raghav/Desktop/practice_code/MelodyTranscriber/data/samples/archive/Mozart_from_Piano_Sonata_K310_first_movement.wav"],
-    "/home/raghav/Desktop/practice_code/MelodyTranscriber/outputs/MIDI",
-    True,
-    True,
-    True,
-    True,
-     ICASSP_2022_MODEL_PATH
+    )
 
-)
+if __name__=="__main__":
+ predictMidi("recordings/sargamPhone.m4a")
+    

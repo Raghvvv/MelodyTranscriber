@@ -6,3 +6,4 @@ numpy==1.26.4
 soundfile
 streamlit-mic-recorder
 mido
+setuptools

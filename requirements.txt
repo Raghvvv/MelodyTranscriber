@@ -7,3 +7,4 @@ soundfile
 streamlit-mic-recorder
 mido
 setuptools==69.5.1
+pyfluidsynth

@@ -39,7 +39,7 @@ if up_file is not None:
         with open(wav_path, "rb") as f:
          audio_bytes = f.read()
 
-        st.audio(audio_bytes, format="audio/wav")
+        st.audio(audio_bytes)
 
 st.divider()
 
@@ -72,4 +72,4 @@ if audio:
         with open(wav_path, "rb") as f:
          audio_bytes = f.read()
 
-        st.audio(audio_bytes, format="audio/wav")
+        st.audio(audio_bytes)

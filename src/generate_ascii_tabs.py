@@ -7,8 +7,8 @@ def generate_tabs(sequence):
     for note in sequence:
         for index,line in enumerate(tabs):
             
-            if(note[0]==index): tabs[index]+= str(note[1]).zfill(2)+"-"
-            else: tabs[index]+= "--"
+            if(note[0]==index): tabs[index]+= f"{note[1]:02d}-"
+            else: tabs[index]+= "---"
     tabs.reverse()
     return tabs
 

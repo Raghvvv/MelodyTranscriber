@@ -1,1 +1,8 @@
-pitch_venv/
+venv/
+data/samples/
+recordings/
+outputs/MIDI/
+src/__pycache__/
+*.mid
+
+test_venv

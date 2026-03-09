@@ -1,10 +1,11 @@
 from inspect_MIDI import inspectMidi
-def fret_map(midi):
+def fret_map(midi,debug=False):
     # melody = inspectMidi(midi)
     melody=midi
 
     for note in melody:
-        print(note, "\n")
+        if(debug):
+            print(note, "\n")
 
     open_strings = [40,45,50,55,59,64]
 

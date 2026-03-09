@@ -1,11 +1,12 @@
 from fret_map import fret_map
 
 def generate_tabs(sequence):
+
     tabs=["E| ","A| ","D| ","G| ","B| ","e| "]
-    # string_label=["E","A","D","G","B","e"]
+    
     for note in sequence:
         for index,line in enumerate(tabs):
-            # if(tabs[index]==""): tabs[index]=string_label[index]
+            
             if(note[0]==index): tabs[index]+= str(note[1]).zfill(2)+"-"
             else: tabs[index]+= "--"
     tabs.reverse()

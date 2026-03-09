@@ -1,18 +1,20 @@
 
 import pretty_midi
 
-def inspectMidi(midi): 
+def inspectMidi(midi,debug=False): 
     pm = midi
-    print(type(pm))
-    # print(f"Tempo estimate: {pm.estimate_tempo():.2f} BPM")
-    print(f"Number of instruments: {len(pm.instruments)}\n")
+    if(debug):
+        print(type(pm))
+        print(f"Tempo estimate: {pm.estimate_tempo():.2f} BPM")
+        print(f"Number of instruments: {len(pm.instruments)}\n")
     note_bucket={}
     bucketSize=0.03
     for i, instrument in enumerate(pm.instruments):
-        print(f"Instrument {i}:")
-        print(f"  Program: {instrument.program}")
-        print(f"  Is drum: {instrument.is_drum}")
-        print(f"  Number of notes: {len(instrument.notes)}\n")
+        if(debug):
+            print(f"Instrument {i}:")
+            print(f"  Program: {instrument.program}")
+            print(f"  Is drum: {instrument.is_drum}")
+            print(f"  Number of notes: {len(instrument.notes)}\n")
 
         for note in instrument.notes:
             duration = note.end - note.start

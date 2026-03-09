@@ -19,7 +19,7 @@ up_file=st.file_uploader(
 
 if up_file is not None:
 
-    suffix="."+up_file.name.split(".")[-1]
+    suffix = "." + up_file.name.split(".")[-1]
 
     with tempfile.NamedTemporaryFile(delete=False,suffix=suffix) as tmp:
         tmp.write(up_file.read())
@@ -39,7 +39,7 @@ if up_file is not None:
         with open(wav_path, "rb") as f:
          audio_bytes = f.read()
 
-        st.audio(audio_bytes, format="audio/wav")
+        st.audio(audio_bytes)
 
 st.divider()
 
@@ -52,7 +52,9 @@ audio=mic_recorder(
 )
 
 if audio:
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as f:
+
+    audio_format=audio["mime_type"].split("/")[-1]
+    with tempfile.NamedTemporaryFile(delete=False, suffix=f".{audio_format}") as f:
         f.write(audio["bytes"])
         filepath = f.name
 
@@ -72,4 +74,4 @@ if audio:
         with open(wav_path, "rb") as f:
          audio_bytes = f.read()
 
-        st.audio(audio_bytes, format="audio/wav")
+        st.audio(audio_bytes)

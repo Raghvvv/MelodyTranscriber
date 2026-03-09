@@ -6,6 +6,12 @@ from basic_pitch.inference import predict_and_save
 
 # print(note_events)
 
+basic_pitch_model = ICASSP_2022_MODEL_PATH
+
+def predictMIDI(audio):
+   model_output,MIDI,note_events=predict(audio,model_or_model_path=basic_pitch_model)
+   return MIDI
+
 def predictMidi(wavfile):
     predict_and_save(
         [wavfile],
@@ -19,5 +25,8 @@ def predictMidi(wavfile):
     )
 
 if __name__=="__main__":
- predictMidi("recordings/sargamPhone.m4a")
+ midi=predictMIDI("data/samples/archive/Circle_of_fifths_chord_progression_-_minor.wav")
+ midi.write("output.mid")
+ print("done")
+ 
     

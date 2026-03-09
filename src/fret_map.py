@@ -1,6 +1,7 @@
 from inspect_MIDI import inspectMidi
 def fret_map(midi):
-    melody = inspectMidi(midi)
+    # melody = inspectMidi(midi)
+    melody=midi
 
     for note in melody:
         print(note, "\n")

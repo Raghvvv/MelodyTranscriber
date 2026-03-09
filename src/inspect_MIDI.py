@@ -1,10 +1,10 @@
 
 import pretty_midi
 
-def inspectMidi(midi_path): 
-    pm = pretty_midi.PrettyMIDI(midi_path)
-
-    print(f"Tempo estimate: {pm.estimate_tempo():.2f} BPM")
+def inspectMidi(midi): 
+    pm = midi
+    print(type(pm))
+    # print(f"Tempo estimate: {pm.estimate_tempo():.2f} BPM")
     print(f"Number of instruments: {len(pm.instruments)}\n")
     note_bucket={}
     bucketSize=0.03
@@ -26,7 +26,7 @@ def inspectMidi(midi_path):
         print("\n" + "-" * 60 + "\n")
 
 
-        print(note_bucket)
+        # print(note_bucket)
 
         note_map={}
 
@@ -56,11 +56,11 @@ def inspectMidi(midi_path):
     return melody
 
 if __name__=="__main__":
-    melody=inspectMidi("data/samples/archive/Mozart_from_Piano_Sonata_K310_first_movement.wav")
+    melody=inspectMidi("/run/media/raghav/434b72ae-8a38-4f14-b0c0-aabc1ec4b4fc/home/raghav/Desktop/practice_code/MelodyTranscriber/outputs/MIDI/Mozart_from_Piano_Sonata_K310_first_movement_basic_pitch.mid")
          
     print(len(melody))
     for note in melody:
-        print(note)
+        print(note,"\n")
     
     
 
